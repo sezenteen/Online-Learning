@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Нэвтрэх</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-100 to-gray-300">
+<div class="min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
+        <h2 class="text-3xl font-extrabold text-center text-gray-800 mb-6">Нэвтрэх</h2>
+
+        <form th:action="@{/login}" method="post">
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium text-sm mb-2" for="username">Нэвтрэх нэр:</label>
+                <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        class="shadow-sm border border-gray-300 rounded-lg w-full py-2 px-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Нэвтрэх нэр оруулна уу"
+                />
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-gray-700 font-medium text-sm mb-2" for="password">Нууц үг:</label>
+                <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        class="shadow-sm border border-gray-300 rounded-lg w-full py-2 px-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Нууц үгээ оруулна уу"
+                />
+            </div>
+
+            <div class="mb-4 flex items-center justify-between">
+                <button
+                        type="submit"
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                    Нэвтрэх
+                </button>
+            </div>
+
+            <div class="text-center">
+                <a class="text-sm text-blue-500 hover:text-blue-800 font-medium" href="#">
+                    Нууц үг сэргээх?
+                </a>
+            </div>
+        </form>
+
+        <div class="mt-6 text-center">
+            <p class="text-sm text-gray-600">Танд бүртгэл байгаа юу?
+                <a class="text-blue-600 font-medium hover:text-blue-700 transition" href="/register">Бүртгүүлэх</a>
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

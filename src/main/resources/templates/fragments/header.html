@@ -1,0 +1,46 @@
+<th:block th:fragment>
+    <html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Navbar -->
+    <nav class="bg-blue-900 shadow-md">
+        <div class="container mx-auto px-4 flex justify-between items-center py-4">
+            <div class="text-3xl font-bold text-white">
+                <a href="/">Edu<span class="text-yellow-400">Learn</span></a>
+            </div>
+            <!-- Menu for larger screens -->
+            <div class="hidden md:flex space-x-8 text-white text-lg font-medium">
+                <a th:href="@{/}" class="hover:text-yellow-300">Нүүр хуудас</a>
+                <a th:href="@{/courses}" class="hover:text-yellow-300">Сургалт</a>
+                <a th:href="@{/about}" class="hover:text-yellow-300">Бидний тухай</a>
+                <a th:href="@{/contact}" class="hover:text-yellow-300">Холбоо барих</a>
+                <a th:href="@{/login}" class="hover:text-yellow-300">Нэвтрэх</a>
+                <a th:href="@{/profile}" class="hover:text-yellow-300">Профайл</a>
+            </div>
+            <!-- Hamburger Menu -->
+            <div class="md:hidden text-white">
+                <button id="menu-btn" class="focus:outline-none">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-blue-800 text-white">
+            <a th:href="@{/}" class="block px-4 py-2 hover:bg-blue-700">Нүүр хуудас</a>
+            <a th:href="@{/courses}" class="block px-4 py-2 hover:bg-blue-700">Сургалт</a>
+            <a th:href="@{/about}" class="block px-4 py-2 hover:bg-blue-700">Бидний тухай</a>
+            <a th:href="@{/contact}" class="block px-4 py-2 hover:bg-blue-700">Холбоо барих</a>
+            <a th:href="@{/login}" class="block px-4 py-2 hover:bg-blue-700">Нэвтрэх</a>
+            <a th:href="@{/profile}" class="block px-4 py-2 hover:bg-blue-700">Профайл</a>
+        </div>
+    </nav>
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+    </html>
+</th:block>

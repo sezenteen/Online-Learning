@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn - Холбоо барих</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/static/css/output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800">
+<!-- Header Fragments -->
+<th:block th:include="~{fragments/header}"></th:block>
+
+<!-- Hero Section -->
+<section class="bg-gradient-to-r from-blue-50 to-white py-16">
+    <div class="container mx-auto px-6 lg:px-16 text-center">
+        <h1 class="text-5xl font-extrabold text-blue-900">Холбоо барих</h1>
+        <p class="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
+            Бидэнтэй холбоо барихын тулд доорх маягтыг бөглөнө үү эсвэл манай оффис руу шууд ирээрэй.
+        </p>
+    </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-6 lg:px-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Contact Form -->
+            <div>
+                <h2 class="text-4xl font-bold text-gray-800 mb-6">Маягт бөглөх</h2>
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-lg font-medium text-gray-700">Таны нэр</label>
+                        <input type="text" id="name" name="name" placeholder="Нэрээ оруулна уу" required
+                               class="w-full mt-2 p-4 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-lg font-medium text-gray-700">Таны и-мэйл</label>
+                        <input type="email" id="email" name="email" placeholder="Имэйл хаягаа оруулна уу" required
+                               class="w-full mt-2 p-4 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-lg font-medium text-gray-700">Таны мессеж</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Мессежээ бичнэ үү" required
+                                  class="w-full mt-2 p-4 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit"
+                                class="w-full py-3 bg-blue-600 text-white text-lg font-medium rounded-lg shadow-md hover:bg-blue-700">
+                            Илгээх
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <!-- Contact Details -->
+            <div>
+                <h2 class="text-4xl font-bold text-gray-800 mb-6">Холбоо барих мэдээлэл</h2>
+                <p class="text-lg text-gray-600">
+                    Бид танд туслахдаа баяртай байх болно. Та дараах мэдээллээр бидэнтэй холбоо барьж болно:
+                </p>
+                <div class="mt-8 space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <svg class="w-8 h-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                             viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M3 10h11M9 21V3m-6 6a9 9 0 119 9m-4-3l6 6" />
+                        </svg>
+                        <span class="text-lg font-medium text-gray-800">Улаанбаатар, Монгол</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <svg class="w-8 h-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                             viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M3 10h11M9 21V3m-6 6a9 9 0 119 9m-4-3l6 6" />
+                        </svg>
+                        <span class="text-lg font-medium text-gray-800">+976 1234-5678</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <svg class="w-8 h-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                             viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M16 2H8m8 18H8m10-9v-3a3 3 0 00-3-3H9a3 3 0 00-3 3v3m16 0a2 2 0 01-2 2H5a2 2 0 01-2-2m18 0v3a3 3 0 01-3 3H7a3 3 0 01-3-3v-3" />
+                        </svg>
+                        <span class="text-lg font-medium text-gray-800">support@edulearn.mn</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Map Section -->
+<section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6 lg:px-16">
+        <h2 class="text-4xl font-bold text-center text-gray-800">Манай байршил</h2>
+        <div class="mt-8 rounded-lg overflow-hidden shadow-lg">
+            <iframe class="w-full h-96"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093984!2d144.96315791550464!3d-37.81627957975198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577fe75f89dc7b2!2sEnvato!5e0!3m2!1sen!2sus!4v1633069697296!5m2!1sen!2sus"
+                    style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<th:block th:include="~{fragments/footer}"></th:block>
+
+</body>
+</html>

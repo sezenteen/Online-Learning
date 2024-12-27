@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+<div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-gray-800 text-center">Манай сургалтууд</h2>
+    <p class="mt-4 text-lg text-gray-600 text-center">Төрөл бүрийн хичээл, ур чадварын түвшингээс сонгоно уу.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-12">
+        <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden" th:each="course : ${courses}">
+            <img th:src="${course.imageUrl}" alt="Course Image" class="w-full h-40 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-800" th:text="${course.name}"></h3>
+                <p class="mt-2 text-gray-600" th:text="${course.description}"></p>
+                <a th:href="@{/courses/{id}(id=${course.id})}" class="mt-4 inline-block px-6 py-2 bg-blue-500 text-white text-sm font-semibold rounded-lg hover:bg-blue-600">
+                    Цааш үзэх
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
