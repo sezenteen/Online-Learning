@@ -61,12 +61,18 @@ public class UserController {
         return "redirect:/login";
     }
 
-    @GetMapping("/users/profile")
-    public String userProfile(Model model, Principal principal) {
-        User user = userRepository.findByUsername(principal.getName());
+    @GetMapping("/profile")
+    public String getProfile(Model model) {
+        User user = userService.getCurrentUser(); // Fetch the logged-in user
+        if (user == null) {
+            return "redirect:/login"; // Redirect if not authenticated
+        }
         model.addAttribute("user", user);
-        return "profile";
+        return "profile"; // Matches `profile.html`
     }
+
+
+
 
     @GetMapping("/login")
     public String showLoginForm() {

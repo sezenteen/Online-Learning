@@ -52,5 +52,9 @@ public class UserService implements UserDetailsService {
                         .collect(Collectors.toList()).toArray(new String[0]))
                 .build();
     }
+
+    public User getCurrentUser() {
+        return userRepository.findByUsername(org.springframework.security.core.context.SecurityContextHolder.getContext().getAuthentication().getName());
+    }
 }
 

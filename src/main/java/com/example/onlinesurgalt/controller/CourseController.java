@@ -23,7 +23,7 @@ public class CourseController {
     @GetMapping("/courses")
     public String listCourses(Model model) {
         model.addAttribute("courses", courseService.getAllCourses());
-        return "courses"; // Refers to "courses.html" in templates
+        return "course"; // Refers to "courses.html" in templates
     }
 
     // View course details
@@ -34,7 +34,7 @@ public class CourseController {
             model.addAttribute("course", course.get());
             return "course-detail"; // Refers to "course-detail.html" in templates
         } else {
-            return "redirect:/courses"; // Redirect to course list if not found
+            return "redirect:/course"; // Redirect to course list if not found
         }
     }
 }
